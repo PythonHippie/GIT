@@ -1,0 +1,3 @@
+To filter the zira id's for commit messages:
+--------------------------------------------
+$ git log --date=iso --since="2019-04-12" --no-merges --pretty=format:"%aN,%ad,%s" | grep -v "build" |cut -d"," -f 3 | cut -d" " -f 1 | sed "/Changed/d"
