@@ -1,3 +1,6 @@
-To filter the zira id's for commit messages:
+To filter the jira id's for commit messages:
 --------------------------------------------
 $ git log --date=iso --since="2019-04-12" --no-merges --pretty=format:"%aN,%ad,%s" | grep -v "build" |cut -d"," -f 3 | cut -d" " -f 1 | sed "/Changed/d"
+-------------------------------------------
+updated to the jira id's filter command:
+git log --since="2019-05-01" --no-merges --pretty=format:'%s' | egrep -o "[A-Z]+-[0-9]+"
